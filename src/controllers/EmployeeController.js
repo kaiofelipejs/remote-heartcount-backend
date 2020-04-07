@@ -32,12 +32,12 @@ module.exports = {
 		const { id } = request.params;
 		const company_id = request.headers.authorization;
 
-		const incident = await connection("employees")
+		const employee = await connection("employees")
 			.where("id", id)
 			.select("company_id")
 			.first();
 
-		if (incident.company_id !== company_id) {
+		if (employee.company_id !== company_id) {
 			return response.status(401).json({ error: "Operation not permitted." });
 		}
 
