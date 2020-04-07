@@ -41,15 +41,7 @@ routes.get(
 	ProfileController.index
 );
 
-routes.get(
-	"/employees",
-	celebrate({
-		[Segments.QUERY]: Joi.object().keys({
-			page: Joi.number(),
-		}),
-	}),
-	EmployeeController.index
-);
+routes.get("/employees", EmployeeController.index);
 
 routes.post(
 	"/employees",
