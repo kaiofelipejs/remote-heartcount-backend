@@ -14,18 +14,25 @@ module.exports = {
 	},
 
 	async create(request, response) {
-		const { name, month, rotation } = request.body;
+		const { name, linkedinProfile = "", month, rotation } = request.body;
 		const company_id = request.headers.authorization;
 
 		const { id } = await connection("employees").insert({
 			name,
+			linkedinProfile,
 			month,
 			rotation,
 			company_id,
 		});
 
-		// console.log(id);
-		return response.json({ id, name, month, rotation, company_id });
+		return response.json({
+			id,
+			name,
+			linkedinProfile,
+			month,
+			rotation,
+			company_id,
+		});
 	},
 
 	async delete(request, response) {

@@ -53,6 +53,7 @@ routes.post(
 		[Segments.BODY]: Joi.object().keys({
 			name: Joi.string().required(),
 			month: Joi.string().required(),
+			linkedinProfile: Joi.string(),
 			rotation: Joi.boolean().required(),
 		}),
 	}),
