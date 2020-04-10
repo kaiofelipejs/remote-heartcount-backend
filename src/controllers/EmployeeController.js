@@ -2,13 +2,9 @@ const connection = require("../database/connection");
 
 module.exports = {
 	async index(request, response) {
-		const [count] = await connection("employees").count();
-
 		const employees = await connection("employees")
 			.join("companies", "companies.id", "=", "employees.company_id")
 			.select(["employees.*"]);
-
-		response.header("X-Total-Count", count["count(*)"]);
 
 		return response.json(employees);
 	},

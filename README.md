@@ -23,7 +23,7 @@ Every time we fill a vacancy, we write the names of our hires in the original He
 
 ## The Solution
 
-Then... we created a **Remote HeartC❤️unt**!
+Then... we created a [**Remote HeartC❤️unt**](https://remoteheartcount.herokuapp.com/)!
 Now every recruiter can celebrate their placements by writing their candidates´ names to our online HeartCount!
 
 <h2 align="center">
