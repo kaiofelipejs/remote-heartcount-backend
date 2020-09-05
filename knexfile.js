@@ -9,6 +9,15 @@ module.exports = {
 		},
 	},
 
+	test: {
+		client: "sqlite",
+		connection: ":memory:",
+		useNullAsDefault: true,
+		migrations: {
+			directory: "./src/database/migrations",
+		},
+	},
+
 	production: {
 		client: "pg",
 		connection: process.env.DB_URL_PROD,
