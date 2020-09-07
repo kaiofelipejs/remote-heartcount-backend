@@ -2,10 +2,7 @@ const connection = require("../database/connection");
 
 module.exports = {
 	async index(request, response) {
-		const employees = await connection("employees")
-			.join("companies", "companies.id", "=", "employees.company_id")
-			.select(["employees.*"]);
-
+		const employees = await connection("employees").select(["employees.*"]);
 		return response.json(employees);
 	},
 
@@ -13,7 +10,7 @@ module.exports = {
 		const { name, linkedinProfile = "", month, rotation } = request.body;
 		const company_id = request.headers.authorization;
 
-		const { id } = await connection("employees").insert({
+		const [ id ] = await connection("employees").insert({
 			name,
 			linkedinProfile,
 			month,
