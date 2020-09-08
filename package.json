@@ -19,7 +19,7 @@
     "http-status": "^1.4.2",
     "knex": "^0.21.5",
     "pg": "^8.0.0",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "jest": "^25.2.4",
