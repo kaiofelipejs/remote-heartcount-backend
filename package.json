@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "http-status": "^1.4.2",
     "knex": "^0.21.5",
-    "pg": "^8.0.0",
+    "pg": "^8.3.3",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
